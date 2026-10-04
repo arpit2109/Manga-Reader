@@ -1,0 +1,45 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+myvenv/
+env/
+.pytest_cache/
+
+# Node and React
+**/node_modules/
+**/build/
+**/dist/
+**/coverage/
+
+# Secrets and local configuration
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+
+# Local databases and generated media
+*.sqlite3
+*.db
+media/
+
+# Editors and operating systems
+**/.vscode/
+**/.idea/
+.DS_Store
+Thumbs.db
+
+# Publishing safety: local credentials, keys, and machine databases
+# Publishing safety: local credentials, keys, and machine databases
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.sqlite
+*.dump
+*.bak
+**/myvenv/
