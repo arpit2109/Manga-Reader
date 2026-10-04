@@ -149,3 +149,8 @@ npm start
 
 The backend currently has no requirements file; install any additional dependencies required by the API as needed.
 
+
+
+## Django secret key
+
+Set DJANGO_SECRET_KEY in the environment before starting the backend. Generate a local key with python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())". The settings fallback is for local development only; configure your own key for deployments.
