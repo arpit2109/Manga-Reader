@@ -1,0 +1,61 @@
+.scroll-container {
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.scroll-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-item {
+    width: 150px;
+    flex: 0 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.scroll-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.scroll-btn:hover {
+    background-color: #ff9800;
+    transform: scale(1.1);
+}
+
+.scroll-left {
+    left: 5px;
+}
+
+.scroll-right {
+    right: 5px;
+}

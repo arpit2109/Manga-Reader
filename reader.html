@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Book with Centered Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+         .footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+       
+        body, html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .book-page {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: auto 100vh; /* Height covers full screen, width is centered */
+            background-position: center center; /* Centered horizontally */
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        /* Background Images for Each Page */
+        .book-page:nth-child(1) { background-image: url('./chapter-1/P1.jpg'); }
+        .book-page:nth-child(2) { background-image: url('./chapter-1/P2.jpg'); }
+        .book-page:nth-child(3) { background-image: url('./chapter-1/P3.jpg'); }
+        .book-page:nth-child(4) { background-image: url('./chapter-1/P4.jpg'); }
+        .book-page:nth-child(5) { background-image: url('./chapter-1/P5.jpg'); }
+        .book-page:nth-child(6) { background-image: url('./chapter-1/P6.jpg'); }
+        .book-page:nth-child(7) { background-image: url('./chapter-1/P7.jpg'); }
+        .book-page:nth-child(8) { background-image: url('./chapter-1/P8.jpg'); }
+        .book-page:nth-child(9) { background-image: url('./chapter-1/P9.jpg'); }
+        .book-page:nth-child(10) { background-image: url('./chapter-1/P10.jpg'); }
+
+        /* Animation Effect */
+        .book-page {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .book-page.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Dark Overlay for Better Text Visibility */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+        }
+
+        /* Centered Text */
+        .content {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+  <!--NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#"> <span>MANGA</span>READER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="genresDropdown" role="button" data-bs-toggle="dropdown">Genres</a>
+                    <div class="dropdown-menu" aria-labelledby="genresDropdown">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Adventure</a>
+                                <a class="dropdown-item" href="#">Comedy</a>
+                                <a class="dropdown-item" href="#">Drama</a>
+                                <a class="dropdown-item" href="#">Fantasy</a>
+                                <a class="dropdown-item" href="#">Horror</a>
+                                <a class="dropdown-item" href="#">Isekai</a>
+                                <a class="dropdown-item" href="#">Josei</a>
+                                <a class="dropdown-item" href="#">Magic</a>
+                                <a class="dropdown-item" href="#">Martial Arts</a>
+                            </div>
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Mecha</a>
+                                <a class="dropdown-item" href="#">Military</a>
+                                <a class="dropdown-item" href="#">Mystery</a>
+                                <a class="dropdown-item" href="#">Psychological</a>
+                                <a class="dropdown-item" href="#">Romance</a>
+                                <a class="dropdown-item" href="#">School Life</a>
+                                <a class="dropdown-item" href="#">Sci-Fi</a>
+                                <a class="dropdown-item" href="#">Seinen</a>
+                                <a class="dropdown-item" href="#">Shoujo</a>
+                                <a class="dropdown-item" href="#">Shounen</a>
+                            </div>
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Slice of Life</a>
+                                <a class="dropdown-item" href="#">Sports</a>
+                                <a class="dropdown-item" href="#">Supernatural</a>
+                                <a class="dropdown-item" href="#">Suspense</a>
+                                <a class="dropdown-item" href="#">Thriller</a>
+                                <a class="dropdown-item" href="#">Tragedy</a>
+                                <a class="dropdown-item" href="#">Vampire</a>
+                                <a class="dropdown-item" href="#">Webtoon</a>
+                                <a class="dropdown-item" href="#">Yaoi</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rankingDropdown" role="button" data-bs-toggle="dropdown">Ranking</a>
+                    <div class="dropdown-menu" aria-labelledby="rankingDropdown">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Top Rated</a>
+                                <a class="dropdown-item" href="#">Most Popular</a>
+                                <a class="dropdown-item" href="#">Trending</a>
+                                <a class="dropdown-item" href="#">New Releases</a>
+                            </div>
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Completed</a>
+                                <a class="dropdown-item" href="#">Ongoing</a>
+                                <a class="dropdown-item" href="#">Monthly Ranking</a>
+                                <a class="dropdown-item" href="#">Weekly Ranking</a>
+                            </div>
+                            <div class="column">
+                                <a class="dropdown-item" href="#">Daily Ranking</a>
+                                <a class="dropdown-item" href="#">Top Isekai</a>
+                                <a class="dropdown-item" href="#">Top Romance</a>
+                                <a class="dropdown-item" href="#">Top Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Advanced Search</a></li>
+            </ul>
+            <form class="d-flex search-bar ms-3">
+                <input class="form-control" type="search" placeholder="Search mangas..." aria-label="Search">
+            </form>
+            <div class="ms-3">
+                <i class="bi bi-person-circle text-white" style="font-size: 24px;"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Book Pages with Centered Images -->
+     
+    <div class="book-page" id="page1">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page2">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page3">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page4">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page5">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page6">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page7">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page8">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page9">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+    <div class="book-page" id="page10">
+        <div class="overlay"></div>
+        <div class="content"></div>
+    </div>
+
+    <script>
+        // Animation on Scroll
+        document.addEventListener("scroll", function () {
+            let pages = document.querySelectorAll(".book-page");
+            pages.forEach(page => {
+                let rect = page.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    page.classList.add("visible");
+                }
+            });
+        });
+
+        // Initial animation trigger for first visible pages
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+  
+<!-- FOOTER -->
+
+<footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <div class="mb-3">
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/terms.html" class="text-white text-decoration-none mx-2">Terms of Usage</a> |
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/DMCA.html" class="text-white text-decoration-none mx-2">DMCA</a> |
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/privacy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
+        </div>
+        <div class="footer-logo fw-bold fs-4">MANGA<span class="text-primary">READER</span></div>
+        <p class="mt-2 small">All information and images on the website are collected from the Internet. We do not own or take responsibility for any information on this website. If it affects any individual or organization, we will review and remove it immediately upon request.</p>
+        <p class="mb-0 small"> 2025 - Made with <span class="text-danger">❤️</span></p>
+    </div>
+</footer>
+ <!--/FOOTER -->
+</body>
+</html>

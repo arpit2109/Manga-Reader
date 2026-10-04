@@ -1,0 +1,105 @@
+body {
+    background-color: #f4f4f4;
+}
+.navbar {
+    background: linear-gradient(90deg, #9900ff, #d000ff);
+    padding: 15px;
+}
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.navbar-brand span {
+    color: red;
+}
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+}
+.search-bar input {
+    width: 200px;
+    transition: width 0.4s ease-in-out;
+}
+.search-bar input:focus {
+    width: 300px;
+    box-shadow: 0px 0px 10px white;
+}
+.notice {
+    background-color: #9900ff;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+}
+.dropdown-menu {
+    width: 600px;
+    padding: 20px;
+}
+.dropdown-columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dropdown-columns .column {
+    width: 33.33%;
+}
+
+/* Ensure consistent card size inside #mangaCarousel */
+#mangaCarousel .card {
+    width: 200px; /* Fixed width */
+    height: 360px; /* Increased height */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Ensure images have the same size */
+#mangaCarousel .card img {
+    width: 100%; /* Full width */
+    height: 250px; /* Fixed height to fit the increased card height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Add hover effect */
+#mangaCarousel .card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3); /* Glowing effect */
+}
+
+/* Align button at the bottom */
+#mangaCarousel .card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push button to bottom */
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+/* Style for buttons */
+#mangaCarousel .btn-primary {
+    background-color: #ff6b6b; /* Custom button color */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+#mangaCarousel .btn-primary:hover {
+    background-color: #ff4d4d; /* Darker color on hover */
+}
+
+/* Ensure uniform height for carousel items */
+#mangaCarousel .carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
+/* Smooth carousel transitions */
+#mangaCarousel .carousel-item {
+    transition: transform 0.6s ease-in-out;
+}

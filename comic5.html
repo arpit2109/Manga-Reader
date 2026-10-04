@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Count’s Youngest Son Is a Gamer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+         background-color: #222;  
+            
+        }
+        .comic-card {
+            
+            background: gray;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .comic-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .rating {
+            color: red;
+            font-size: 20px;
+        }
+                /* Styling the scrollable container */
+        .scrollable-grid {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Grid items styling */
+        .grid-item {
+            padding: 20px;
+            margin: 15px ;
+            background-color:blueviolet;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            width:475px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for grid items */
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animation for fade-in */
+        .grid-item {
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        /* Fade-in keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Scrollbar styling 
+        .scrollable-grid::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollable-grid::-webkit-scrollbar-thumb {
+            background-color: black;
+            border-radius: 10px;
+            
+        }
+
+        .scrollable-grid::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }*/
+    .scrollable-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust spacing between rows */
+    background-color: #9900ff;
+     }
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust spacing between columns */
+}
+
+.grid-item {
+    background-color: gray;
+
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+        .footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+        .about-section {
+        background: url('./IMAGE/bg41.jpg') center center/cover;
+
+          text-align: center;
+          padding: 100px 20px;
+          color: white;
+          font-size: 32px;
+          font-weight: bold;
+      }
+
+     
+
+    </style>
+</head>
+<body>
+        <!--NAVBAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#"> <span>MANGA</span>READER</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="genresDropdown" role="button" data-bs-toggle="dropdown">Genres</a>
+                            <div class="dropdown-menu" aria-labelledby="genresDropdown">
+                                <div class="dropdown-columns">
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Adventure</a>
+                                        <a class="dropdown-item" href="#">Comedy</a>
+                                        <a class="dropdown-item" href="#">Drama</a>
+                                        <a class="dropdown-item" href="#">Fantasy</a>
+                                        <a class="dropdown-item" href="#">Horror</a>
+                                        <a class="dropdown-item" href="#">Isekai</a>
+                                        <a class="dropdown-item" href="#">Josei</a>
+                                        <a class="dropdown-item" href="#">Magic</a>
+                                        <a class="dropdown-item" href="#">Martial Arts</a>
+                                    </div>
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Mecha</a>
+                                        <a class="dropdown-item" href="#">Military</a>
+                                        <a class="dropdown-item" href="#">Mystery</a>
+                                        <a class="dropdown-item" href="#">Psychological</a>
+                                        <a class="dropdown-item" href="#">Romance</a>
+                                        <a class="dropdown-item" href="#">School Life</a>
+                                        <a class="dropdown-item" href="#">Sci-Fi</a>
+                                        <a class="dropdown-item" href="#">Seinen</a>
+                                        <a class="dropdown-item" href="#">Shoujo</a>
+                                        <a class="dropdown-item" href="#">Shounen</a>
+                                    </div>
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Slice of Life</a>
+                                        <a class="dropdown-item" href="#">Sports</a>
+                                        <a class="dropdown-item" href="#">Supernatural</a>
+                                        <a class="dropdown-item" href="#">Suspense</a>
+                                        <a class="dropdown-item" href="#">Thriller</a>
+                                        <a class="dropdown-item" href="#">Tragedy</a>
+                                        <a class="dropdown-item" href="#">Vampire</a>
+                                        <a class="dropdown-item" href="#">Webtoon</a>
+                                        <a class="dropdown-item" href="#">Yaoi</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="rankingDropdown" role="button" data-bs-toggle="dropdown">Ranking</a>
+                            <div class="dropdown-menu" aria-labelledby="rankingDropdown">
+                                <div class="dropdown-columns">
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Top Rated</a>
+                                        <a class="dropdown-item" href="#">Most Popular</a>
+                                        <a class="dropdown-item" href="#">Trending</a>
+                                        <a class="dropdown-item" href="#">New Releases</a>
+                                    </div>
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Completed</a>
+                                        <a class="dropdown-item" href="#">Ongoing</a>
+                                        <a class="dropdown-item" href="#">Monthly Ranking</a>
+                                        <a class="dropdown-item" href="#">Weekly Ranking</a>
+                                    </div>
+                                    <div class="column">
+                                        <a class="dropdown-item" href="#">Daily Ranking</a>
+                                        <a class="dropdown-item" href="#">Top Isekai</a>
+                                        <a class="dropdown-item" href="#">Top Romance</a>
+                                        <a class="dropdown-item" href="#">Top Action</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Advanced Search</a></li>
+                    </ul>
+                    <form class="d-flex search-bar ms-3">
+                        <input class="form-control" type="search" placeholder="Search mangas..." aria-label="Search">
+                    </form>
+                    <div class="ms-3">
+                        <i class="bi bi-person-circle text-white" style="font-size: 24px;"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="notice">
+            Some chapters have image errors, we are trying to fix them. Sorry for the inconvenience.
+        </div>
+    <!-- NAVBAR -->
+
+     <!--ABOUT US-->
+<div class="about-section  bg-dark text-white"></div>
+
+
+    <!-- COMIC READING -->
+    <div class="container py-5 justify-content-center"style="padding-left: 2px margin-top:50px">
+        <div class="comic-card">
+            <div class="row">
+                <div class="col-md-4 comic-image">
+                    <img src="./IMAGE/emperor-of-steel.jpg" alt="Comic Cover">
+                    <p class="rating">★★★★★ 10/10 (10)</p>
+                    <button class="btn btn-primary w-100">READ NOW</button>
+                </div>
+                <div class="col-md-8">
+                    <h2>Emperor of Steel</h2>
+                    <p><strong>Other Names:</strong> Metal Empress, etc.</p>
+                    <span class="badge bg-purple">Long Strip</span>
+                    <span class="badge bg-purple">Web Comic</span>
+                    <span class="badge bg-purple">Full Color</span>
+                    <p><strong>Description:</strong> The story is filled with intense battles, dark magic, and political intrigue,
+                         as Seymon uses his formidable powers to reclaim his throne and reshape the world according to his vision. 
+                         With its blend of fantasy, drama, and martial arts, 
+                        "Emperor of Steel" offers a thrilling and captivating narrative that keeps readers on the edge of their seats.
+                    </p>
+                    <button class="btn btn-success">Start Reading</button>
+                    <button class="btn btn-danger">Read Newest</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAPTERS-->
+    <!-- Notice -->
+<div class="notice">
+    <strong> CHAPTERS </strong>
+</div>
+<div class="container py-5">
+    <div class="scrollable-grid">
+        <!-- 7 rows with 4 columns in desktop, 1 column in mobile -->
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">1</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">2</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">3</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">4</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">5</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">6</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">7</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">8</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">9</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">10</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">11</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">12</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">13</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">14</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">15</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">16</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">17</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">18</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">19</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">20</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">21</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">22</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">23</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">24</div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">25</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">26</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">27</div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 grid-item">28</div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- ... -->
+   
+<!-- FOOTER -->
+
+<footer class="footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <div class="mb-3">
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/Terms.html" class="text-white text-decoration-none mx-2">Terms of Usage</a> |
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/DMCA.html" class="text-white text-decoration-none mx-2">DMCA</a> |
+            <a href="file:///C:/Users/yadav/OneDrive/Desktop/Arpit_FSD/privacy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
+        </div>
+        <div class="footer-logo fw-bold fs-4">MANGA<span class="text-primary">READER</span></div>
+        <p class="mt-2 small">All information and images on the website are collected from the Internet. We do not own or take responsibility for any information on this website. If it affects any individual or organization, we will review and remove it immediately upon request.</p>
+        <p class="mb-0 small">&copy; 2025 - Made with <span class="text-danger">❤️</span></p>
+    </div>
+</footer>
+ <!---->
+
+</body>
+</html>
